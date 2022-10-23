@@ -77,7 +77,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          keys: [frontend-build]
+          keys: [frontend-deps]
       - run:
           name: test front-end
           command: |
@@ -90,7 +90,7 @@ jobs:
       - image: cimg/node:13.8.0
     steps:
       - restore_cache:
-          keys: [backend-build]
+          keys: [backend-deps]
       - run:
           name: Test Backend 
           command: |
@@ -110,13 +110,13 @@ jobs:
           command: |
             cd frontend
             npm install
-            npm install oauth-sign@^0.9.0
             npm audit fix --audit-level=critical
-            #npm audit --audit-level=critical
-#      - slack/notify:
-#          channel: C03NZHBJAGG
-#          event: fail
-#          template: basic_fail_1
+ #            npm install oauth-sign@^0.9.0
+ #            npm audit --audit-level=critical
+ #      - slack/notify:
+ #          channel: C03NZHBJAGG
+ #          event: fail
+ #          template: basic_fail_1
 
   scan-backend:
     docker:
