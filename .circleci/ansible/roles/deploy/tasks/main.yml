@@ -16,10 +16,10 @@
     pm2 start main.js
   register: execute_node
 
-- name: "Installing Node Dependencies"
-  shell: |
-    cd ~/backend-app
-    pm i
+#- name: "Installing Node Dependencies"
+#  shell: |
+#    cd ~/backend-app
+#    npm i
 
 - name: print message
   debug:
