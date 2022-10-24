@@ -23,9 +23,9 @@
 #    cd ~/backend-app
 #    npm i
 
-- name: print message
-  debug:
-    msg: "{{ execute_node.stdout_lines }}"
+#- name: print message
+#  debug:
+#    msg: "{{ execute_node.stdout_lines }}"
 
 - name: "Configure pm2 to start as service"
   become: true
